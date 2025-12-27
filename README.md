@@ -1,12 +1,12 @@
-🧾 MiniInventory
+MiniInventory
 
-A minimal full-stack inventory management demo built with:
+MiniInventory is a minimal full-stack inventory management application built using:
 
-Backend: .NET 8 + GraphQL (Hot Chocolate) + EF Core + SQLite
+Backend: .NET 8, GraphQL (Hot Chocolate), Entity Framework Core, SQLite
 
-Frontend: React (Vite) + Apollo Client
+Frontend: React (Vite), Apollo Client
 
-This project demonstrates CRUD operations using GraphQL with a clean React UI.
+This project demonstrates CRUD operations implemented using GraphQL with a clean React user interface.
 
 Features
 
@@ -14,16 +14,15 @@ Add inventory items (name, type, quantity)
 
 Update quantity of existing items
 
-Delete items
+Delete inventory items
 
-GraphQL API with Hot Chocolate
+GraphQL API built using Hot Chocolate
 
-React UI with Apollo Client
+React UI using Apollo Client
 
 SQLite database (no separate installation required)
 
- ech Stack
-
+Technology Stack
 Backend
 
 .NET 8
@@ -42,29 +41,35 @@ Vite
 
 Apollo Client
 
-📋 Prerequisites
-1. .NET SDK (8.0+)
+Prerequisites
 
-Download: https://dotnet.microsoft.com/download
+This project runs on Windows, macOS, and Linux.
 
-Verify:
+1. .NET SDK (8.0 or later)
+
+Download from:
+https://dotnet.microsoft.com/download
+
+Verify installation:
 
 dotnet --version
 
-2. Node.js (18+ recommended)
+2. Node.js (18 or later recommended)
 
-Download: https://nodejs.org/
+Download from:
+https://nodejs.org/
 
-Verify:
+Verify installation:
 
 node -v
 npm -v
 
+Note about SQLite
 
-❗ You do NOT need to install SQLite separately.
-SQLite is bundled via EF Core and works automatically.
+You do not need to install SQLite separately.
+SQLite is bundled and managed automatically through Entity Framework Core.
 
-📁 Project Structure
+Project Structure
 MiniInventory
 ├── backend
 │   └── MiniInventory
@@ -72,78 +77,79 @@ MiniInventory
 └── frontend
     └── inventory-ui             (React application)
 
-📥 Step 1 — Clone the Repository
+Step 1 — Clone the Repository
 git clone https://github.com/sabyasachi-git-student/MiniInventory.git
 cd MiniInventory
 
-⚙️ Step 2 — Run the Backend (.NET GraphQL API)
+Step 2 — Run the Backend (.NET GraphQL API)
 
-Open Terminal / PowerShell:
+Open a terminal or PowerShell window and run:
 
 cd backend/MiniInventory/Inventory.api
 dotnet restore
 dotnet run
 
-
 You should see output similar to:
 
 Now listening on: http://localhost:7054
 
-Open GraphQL Playground
+Verify Backend
 
-Open browser:
+Open a browser and navigate to:
 
 http://localhost:7054/graphql
 
 
-You should see Banana Cake Pop (GraphQL UI).
+The GraphQL playground (Banana Cake Pop) should load.
 
-ℹ️ Port number may differ.
-Always use the port shown in the terminal.
+Note:
+The port number may differ. Always use the port shown in the terminal output.
 
-🎨 Step 3 — Run the Frontend (React)
+Step 3 — Run the Frontend (React)
 
-Open a second terminal (keep backend running):
+Open a second terminal and keep the backend terminal running.
 
 cd frontend/inventory-ui
 npm install
 npm run dev
 
 
-You should see:
+You should see output similar to:
 
 Local: http://localhost:5173/
 
 
-Open this URL in your browser.
+Open the displayed URL in your browser.
 
-🔗 Step 4 — Verify Frontend ↔ Backend Connection
+Step 4 — Verify Frontend and Backend Connection
 
-The frontend uses Apollo Client.
+The frontend communicates with the backend using Apollo Client.
 
-Check this file:
+Open the following file:
 
 frontend/inventory-ui/src/apolloClient.js
+
 
 Ensure the GraphQL endpoint matches the backend port:
 
 uri: "http://localhost:7054/graphql"
 
-If your backend runs on a different port, update this value accordingly.
 
-✅ Step 5 — Using the Application
+If the backend is running on a different port, update this value and restart the frontend server.
 
-From the UI, you can:
+Step 5 — Using the Application
 
-Add an item (name, type, quantity)
+From the user interface, you can:
 
-Update quantity directly
+Add a new inventory item
 
-Delete items
+Update the quantity of an existing item
 
-📌 Data is stored in SQLite and persists while the backend is running.
+Delete an item
 
-🧪 Sample GraphQL Queries (Optional)
+Data is stored using SQLite and persists while the backend application is running.
+
+Sample GraphQL Queries (Optional)
 Fetch all items
 query {
   items {
@@ -166,32 +172,57 @@ mutation {
   deleteItem(id: 1)
 }
 
-Common Issues & Fixes
-CORS Error
+Common Issues and Troubleshooting
+CORS Errors
 
-Ensure backend is running
+Ensure the backend is running
 
-Ensure frontend port (5173 or 5175) is allowed in CORS policy
+Ensure the frontend port (5173 or 5175) is allowed in the backend CORS configuration
 
-Restart backend after CORS changes
+Restart the backend after making CORS changes
 
-Blank Screen
+Blank Screen in Browser
 
-Check browser console for errors
+Open browser developer tools and check the console for errors
 
-Verify apolloClient.js GraphQL URL
+Verify the GraphQL endpoint in apolloClient.js
 
-Restart frontend server
+Restart the frontend server
 
-Purpose
+Unable to Fetch Data
+
+Check the following:
+
+Backend server is running
+
+GraphQL playground opens successfully
+
+Apollo Client endpoint matches backend port
+
+No CORS errors are present in the browser console
+
+Expected Result
+
+The setup is successful if:
+
+The GraphQL playground loads in the browser
+
+The React UI loads successfully
+
+Inventory items can be added, updated, and deleted
+
+UI updates immediately after each operation
+
+Purpose of This Project
 
 This project is intended as:
 
 A learning demo for GraphQL with .NET
 
-A reference full-stack CRUD implementation
+A reference implementation of a full-stack CRUD application
 
-A technical assignment / interview showcase
+A technical assignment or interview showcase
 
-👤 Author
+Author
+
 Sabyasachi Gupta
